@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_starting_page">
+
+    <fragment
+        android:id="@+id/nav_starting_page"
+        android:name="com.example.memelist.view.StartingPageFragment">
+        <action
+            android:id="@+id/action_starting_page_to_meme_list"
+            app:destination="@id/nav_meme_list"/>
+        <action
+            android:id="@+id/action_starting_page_to_meme_detail"
+            app:destination="@id/nav_meme_detail"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_meme_list"
+        android:name="com.example.memelist.view.MemeListFragment">
+
+        <action
+            android:id="@+id/action_meme_list_to_meme_detail"
+            app:destination="@id/nav_meme_detail"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_meme_detail"
+        android:name="com.example.memelist.view.MemeDetailsFragment">
+        <argument
+            android:name="meme_item"
+            app:argType="com.example.memelist.model.MemeItem"
+            app:nullable="true"/>
+        <argument
+            android:name="meme_id"
+            app:argType="integer"/>
+    </fragment>
+
+</navigation>

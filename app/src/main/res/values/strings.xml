@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MemeList</string>
+    <string name="loading_meme">Loading Memes...</string>
+</resources>
